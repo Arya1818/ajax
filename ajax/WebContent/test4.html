@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+
+<script>
+
+var divs = document.querySelectorAll('div');
+for(var i=0; i<divs.length; i++){
+	var div = divs[i];
+	if(div.innerText=='div1'){
+		div.innerText='헬로우~';
+	}
+	console.log(div.innerText);
+}
+
+
+</script>
+
+</body>
+</html>

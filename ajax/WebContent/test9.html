@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button>클릭</button>
+
+<script>
+function click(){
+	alert(2);
+}
+ 
+var btn = document.querySelector('button');
+btn.onclick = function(){
+	alert(1);
+}
+ 
+ btn.onclick = click; //함수 대입 
+ 
+</script>
+</body>
+</html>

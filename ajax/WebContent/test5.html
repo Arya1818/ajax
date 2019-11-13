@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+
+<script>
+
+var contents = {
+		div1:'헬로우',
+		div2:'하하하',
+		div3:'허허허',
+}
+
+var divs = document.querySelectorAll('div'); // '[div]'
+for(var i=0; i<divs.length; i++){
+	var div = divs[i];
+//	console.log(contents[div.innerText]);
+	div.innerText = contents[div.innerText];
+}
+</script>
+
+</body>
+</html>
