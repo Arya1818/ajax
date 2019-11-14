@@ -34,7 +34,7 @@
 			xhr.onreadystatechange = function(){
 				if(xhr.readyState==4){
 					if(xhr.status==200){
-						console.log(xhr.responseText);
+						console.log(xhr.responseText); //[{"sNum":"1","sName":"서울"},{"sNum":"2","sName":"강원도"},{"sNum":"3","sName":"경기도"},{"sNum":"4","sName":"충청도"}]
 		/* 				var sidoList = JSON.parse(xhr.responseText);
 						var html ='';
 						for(var sido of sidoList){
