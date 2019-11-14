@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+var xhr = new XMLHttpRequest(); //1.전화기
+xhr.open('GET','/test'); //2.전화번호 (get방식으로 거는 전화번호)
+xhr.onreadystatechange = function(){ //뚜-뚜-
+	if(xhr.readyState==4){ 
+		if(xhr.status==200){
+		//	console.log(JSON.parse(xhr.responseText)); //html형태 그대로가 아닌 제이슨형태로parsing해야함
+			document.write(xhr.responseText); //응답값
+			console.log(xhr.responseText);
+		}else{
+			document.write(xhr.responseText);
+		}
+	}
+}
+xhr.send(); //call버튼 
+
+</script>
+
+</body>
+</html>
