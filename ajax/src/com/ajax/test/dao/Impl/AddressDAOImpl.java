@@ -32,7 +32,7 @@ public class AddressDAOImpl implements AddressDAO {
 				map.put("sNum", rs.getString("s_num"));
 				map.put("sName", rs.getString("s_name"));
 				sidoList.add(map);
-				System.out.println(map);
+				//System.out.println(map);
 			}
 			return sidoList;
 			
@@ -64,7 +64,7 @@ public class AddressDAOImpl implements AddressDAO {
 		return null;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //찍어보기!! 여긴 문제없음
 		AddressDAO adao = new AddressDAOImpl();
 		System.out.println(adao.selectSidoList(null));
 

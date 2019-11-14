@@ -22,17 +22,21 @@ window.onload = function(){
 	xhr.onreadystatechange = function(){ //뚜-뚜-
 		if(xhr.readyState==4){ 
 			if(xhr.status==200){
+				//console.log(xhr.responseText) //json형태와 비슷하게생긴 string
 				var sidos = JSON.parse(xhr.responseText); // 200단계에서일어나야함
-				console.log(sidos);
+				//console.log(sidos);
 				var sido = document.querySelector('#sido'); //id가 sido인거 가져와
 				var html = '<option value="">선택</option>';
-				for(var s of sidos){
-					html +='<option value="' + s + '">' + s + '</option>';
+				for(var i in sidos){
+					
+					html +='<option value="' + sidos[i].sNum + '">' + sidos[i].sName + '</option>';
+					
 				}
 				sido.innerHTML = html;
 				
 			}
 		}
+		
 		
 	}
 	xhr.send(); //call버튼 
