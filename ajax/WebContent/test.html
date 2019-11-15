@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="rDiv">
+	<div id="inputDiv">
+		<input type="text" id="id" onkeyup="findId(this)">
+	</div>
+	<div id="buttons">
+		<button id="findIdBtn">찾기</button>
+	</div>
+	<ul id="ulId">
+	
+	</ul>
+</div>
+<script>
+function findId(f){
+	var xhr = new XMLHttpRequest();
+	var url = '/test2/test?';
+	if(f.value.trim().length>0){
+		url += 'id=' + f.value.trim();
+	}
+	xhr.open('GET',url);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState==xhr.DONE){
+			var html = '';
+			 if(xhr.status==200){
+				//console.log(xhr.responseText);
+				var idList = JSON.parse(xhr.responseText);
+				//console.log(idList);
+				for(var id of idList){
+					html += '<li>' + id + '</li>';
+				}
+			} 
+			document.querySelector('#ulId').innerHTML = html;
+		}
+	}
+	xhr.send();
+	//console.log(f.value);
+}
+
+
+
+
+
+/* var btns = document.querSelector('div>div>button[name=findIdBtn]');
+var btns = document.querSelectorAll('div>div>button'); //length:2
+	//alert(btns[0].name); //배열이니까 
+for(var i=0; i<btns.length; i++){
+	var btn = bns[i];
+	if(btn.name=='findIdBtn'){
+		bn.onclick = function(){
+			alert('찾기 클릭');
+		}
+	}else if(btn.name=='findIdBtn'){
+		bn.onclick = function(){
+			alert('초기화 클릭');
+		}
+	}
+} */
+
+
+</script>
+</body>
+</html>
