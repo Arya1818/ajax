@@ -55,8 +55,10 @@ public class TestController2 extends HttpServlet {
 	}
 
 	/*
-	 * public static void main(String[] args) { TestController2 t = new
-	 * TestController2(); System.out.println(t.); }
+	 * public static void main(String[] args) { 
+	 * TestController2 t = new TestController2(); 
+	 * System.out.println(t.); 
+	 * }
 	 */
 
 }

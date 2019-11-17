@@ -20,7 +20,7 @@
 <script>
 function findId(f){
 	var xhr = new XMLHttpRequest();
-	var url = '/test2/test?';
+	var url = '/color/test?';
 	if(f.value.trim().length>0){
 		url += 'id=' + f.value.trim();
 	}
@@ -29,15 +29,14 @@ function findId(f){
 		if(xhr.readyState==xhr.DONE){
 			var html = '';
 			 if(xhr.status==200){
-				//console.log(xhr.responseText);
 				var idList = JSON.parse(xhr.responseText);
-				//console.log(idList);
 				for(var id of idList){
-					html += '<li>' + id + '</li>';
+					html += '<li>' + id.cName + '</li>';
 				}
 			} 
 			document.querySelector('#ulId').innerHTML = html;
 		}
+		
 	}
 	xhr.send();
 	//console.log(f.value);
